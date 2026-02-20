@@ -36,7 +36,7 @@ enum combo_events {
 };
 
 // Последовательности клавиш
-const uint16_t PROGMEM sd_combo[] = {KC_S, KC_D, COMBO_END};
+const uint16_t PROGMEM sd_combo[] = {{LCTL_T(KC_D), LALT_T(KC_S), COMBO_END};
 const uint16_t PROGMEM xc_combo[] = {KC_X, KC_C, COMBO_END};
 
 // Маппинг
