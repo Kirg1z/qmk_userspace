@@ -32,15 +32,17 @@ enum charybdis_keymap_layers {
 
 enum combo_events {
     SD_LCLICK,
-    // другие комбо добавляйте здесь
+    XC_RCLICK,
 };
 
-// Последовательность клавиш
+// Последовательности клавиш
 const uint16_t PROGMEM sd_combo[] = {KC_S, KC_D, COMBO_END};
+const uint16_t PROGMEM xc_combo[] = {KC_X, KC_C, COMBO_END};
 
-// Связываем с действием
+// Маппинг
 combo_t key_combos[] = {
-    [SD_LCLICK] = COMBO(sd_combo, KC_MS_BTN1),
+    [SD_LCLICK] = COMBO(sd_combo, KC_MS_BTN1),  // Левая кнопка
+    [XC_RCLICK] = COMBO(xc_combo, KC_MS_BTN2),  // Правая кнопка
 };
 // Automatically enable sniping-mode on the pointer layer.
 #define CHARYBDIS_AUTO_SNIPING_ON_LAYER LAYER_POINTER
