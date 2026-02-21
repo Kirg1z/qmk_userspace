@@ -40,7 +40,7 @@ enum combo_events {
     IO_WIN_E,
     UPRIGHT_ALT_LEFT,
     PGUPEND_ALT_UP,
-    UI_WIN_SPACE,
+    MCOMMA_LANG // Добавили идентификатор для нового комбо
 };
 
 // Последовательности клавиш
@@ -51,22 +51,22 @@ const uint16_t PROGMEM er_combo[] = {KC_E, KC_R, COMBO_END};
 const uint16_t PROGMEM df_combo[] = {LCTL_T(KC_D), LSFT_T(KC_F), COMBO_END};
 const uint16_t PROGMEM cv_combo[] = {KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
-const uint16_t PROGMEM ui_combo[] = {KC_U, KC_I, COMBO_END};
 const uint16_t PROGMEM upright_combo[] = {KC_UP, KC_RIGHT, COMBO_END};
 const uint16_t PROGMEM pgupend_combo[] = {KC_PGUP, KC_END, COMBO_END};
+const uint16_t PROGMEM mcomma_combo[] = {KC_M, KC_COMM, COMBO_END}; // M + ,
 
-// Маппинг
+// Маппинг комбо
 combo_t key_combos[] = {
-    [SD_LCLICK] = COMBO(sd_combo, KC_MS_BTN1),
-    [XC_RCLICK] = COMBO(xc_combo, KC_MS_BTN2),
-    [WE_CAPS] = COMBO(we_combo, KC_CAPS),
-    [ER_ALT_F4] = COMBO(er_combo, LALT(KC_F4)),
-    [DF_CTRL_C] = COMBO(df_combo, LCTL(KC_C)),
-    [CV_CTRL_V] = COMBO(cv_combo, LCTL(KC_V)),
-    [IO_WIN_E] = COMBO(io_combo, LGUI(KC_E)),
-    [UPRIGHT_ALT_LEFT] = COMBO(upright_combo, LALT(KC_LEFT)),
-    [PGUPEND_ALT_UP] = COMBO(pgupend_combo, LALT(KC_UP)),
-    [UI_WIN_SPACE] = COMBO(ui_combo, LGUI(KC_SPACE)),
+    [SD_LCLICK] = COMBO(sd_combo, KC_MS_BTN1),              // S+D = Левая кнопка мыши
+    [XC_RCLICK] = COMBO(xc_combo, KC_MS_BTN2),              // X+C = Правая кнопка мыши
+    [WE_CAPS] = COMBO(we_combo, KC_CAPS),                   // W+E = Caps Lock
+    [ER_ALT_F4] = COMBO(er_combo, LALT(KC_F4)),             // E+R = Alt+F4
+    [DF_CTRL_C] = COMBO(df_combo, LCTL(KC_C)),              // D+F = Ctrl+C
+    [CV_CTRL_V] = COMBO(cv_combo, LCTL(KC_V)),              // C+V = Ctrl+V
+    [IO_WIN_E] = COMBO(io_combo, LGUI(KC_E)),               // I+O = Win+E
+    [UPRIGHT_ALT_LEFT] = COMBO(upright_combo, LALT(KC_LEFT)),   // Up+Right = Alt+Left
+    [PGUPEND_ALT_UP] = COMBO(pgupend_combo, LALT(KC_UP)),       // PgUp+End = Alt+Up
+    [MCOMMA_LANG] = COMBO(mcomma_combo, LGUI(KC_SPC)),      // M + , = Win + Space (Смена языка)
 };
 // Automatically enable sniping-mode on the pointer layer.
 #define CHARYBDIS_AUTO_SNIPING_ON_LAYER LAYER_POINTER
