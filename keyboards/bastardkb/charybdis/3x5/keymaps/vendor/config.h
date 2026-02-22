@@ -16,6 +16,8 @@
  */
 #pragma once
 
+#define COMBO_TERM 50 // Время в миллисекундах для срабатывания комбо
+
 #ifdef VIA_ENABLE
 /* VIA configuration. */
 #    define DYNAMIC_KEYMAP_LAYER_COUNT 7
