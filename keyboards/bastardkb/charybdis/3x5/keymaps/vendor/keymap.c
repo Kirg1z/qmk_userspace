@@ -40,7 +40,8 @@ enum combo_events {
     IO_WIN_E,
     UPRIGHT_ALT_LEFT,
     PGUPEND_ALT_UP,
-    MCOMMA_LANG // Добавили идентификатор для нового комбо
+    MCOMMA_LANG,
+    CLOSE
 };
 
 // Последовательности клавиш
@@ -53,7 +54,9 @@ const uint16_t PROGMEM cv_combo[] = {KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM upright_combo[] = {KC_UP, KC_RIGHT, COMBO_END};
 const uint16_t PROGMEM pgupend_combo[] = {KC_PGUP, KC_END, COMBO_END};
-const uint16_t PROGMEM mcomma_combo[] = {KC_M, KC_COMM, COMBO_END}; // M + ,
+const uint16_t PROGMEM mcomma_combo[] = {KC_M, KC_COMM, COMBO_END};
+const uint16_t PROGMEM ZX_combo[] = {KC_X, LT(4,KC_Z), COMBO_END};
+
 
 // Маппинг комбо
 combo_t key_combos[] = {
@@ -67,6 +70,8 @@ combo_t key_combos[] = {
     [UPRIGHT_ALT_LEFT] = COMBO(upright_combo, LALT(KC_LEFT)),   // Up+Right = Alt+Left
     [PGUPEND_ALT_UP] = COMBO(pgupend_combo, LALT(KC_UP)),       // PgUp+End = Alt+Up
     [MCOMMA_LANG] = COMBO(mcomma_combo, LGUI(KC_SPC)),      // M + , = Win + Space (Смена языка)
+    [CLOSE] = COMBO(zx_combo, LALT(KC_F4)),      // Z + X = Alt + F4 (Закрыть)
+
 };
 
 // Automatically enable sniping-mode on the pointer layer.
