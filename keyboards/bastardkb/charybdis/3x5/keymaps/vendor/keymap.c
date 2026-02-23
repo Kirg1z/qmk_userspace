@@ -55,7 +55,7 @@ const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM upright_combo[] = {KC_UP, KC_RIGHT, COMBO_END};
 const uint16_t PROGMEM pgupend_combo[] = {KC_PGUP, KC_END, COMBO_END};
 const uint16_t PROGMEM mcomma_combo[] = {KC_M, KC_COMM, COMBO_END};
-const uint16_t PROGMEM ZX_combo[] = {KC_X, LT(4,KC_Z), COMBO_END};
+const uint16_t PROGMEM zx_combo[] = {KC_X, LT(4,KC_Z), COMBO_END};
 
 
 // Маппинг комбо
