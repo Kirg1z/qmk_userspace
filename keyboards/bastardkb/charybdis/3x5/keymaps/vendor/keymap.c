@@ -34,7 +34,7 @@ enum combo_events {
     SD_LCLICK,
     XC_RCLICK,
     WE_CAPS,
-    ER_ALT_F4,
+    ER_CTRL_X,
     DF_CTRL_C,
     CV_CTRL_V,
     IO_WIN_E,
@@ -60,7 +60,7 @@ combo_t key_combos[] = {
     [SD_LCLICK] = COMBO(sd_combo, KC_MS_BTN1),              // S+D = Левая кнопка мыши
     [XC_RCLICK] = COMBO(xc_combo, KC_MS_BTN2),              // X+C = Правая кнопка мыши
     [WE_CAPS] = COMBO(we_combo, KC_CAPS),                   // W+E = Caps Lock
-    [ER_ALT_F4] = COMBO(er_combo, LALT(KC_F4)),             // E+R = Alt+F4
+    [ER_CTRL_X] = COMBO(er_combo, LCTL(KC_X)),             // E+R = Ctrl+X
     [DF_CTRL_C] = COMBO(df_combo, LCTL(KC_C)),              // D+F = Ctrl+C
     [CV_CTRL_V] = COMBO(cv_combo, LCTL(KC_V)),              // C+V = Ctrl+V
     [IO_WIN_E] = COMBO(io_combo, LGUI(KC_E)),               // I+O = Win+E
