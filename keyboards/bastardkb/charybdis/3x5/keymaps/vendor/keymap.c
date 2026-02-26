@@ -73,7 +73,6 @@ combo_t key_combos[] = {
     [CLOSE] = COMBO(zx_combo, LALT(KC_F4)),      // Z + X = Alt + F4 (Закрыть)
 
 };
-#include QMK_KEYBOARD_H
 
 // Определяем перечисление для макросов (если не используете QK_MACRO_X)
 // Но для совместимости с VIA мы будем использовать встроенные QK_MACRO_0 и т.д.
