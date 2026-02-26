@@ -73,7 +73,72 @@ combo_t key_combos[] = {
     [CLOSE] = COMBO(zx_combo, LALT(KC_F4)),      // Z + X = Alt + F4 (Закрыть)
 
 };
+#include QMK_KEYBOARD_H
 
+// Определяем перечисление для макросов (если не используете QK_MACRO_X)
+// Но для совместимости с VIA мы будем использовать встроенные QK_MACRO_0 и т.д.
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.pressed) {
+        switch (keycode) {
+            // Макрос для символа ":" (Alt + 58)
+            case QK_MACRO_0:
+                // Включаем Num Lock, так как код должен набираться на цифровом блоке
+                // Это действие эквивалентно нажатию кнопки Num Lock
+                tap_code(KC_NUM_LOCK);
+                // Зажимаем левый Alt
+                register_code(KC_LALT);
+                // Нажимаем и отпускаем цифры 5 и 8 на цифровом блоке
+                tap_code(KC_KP_5);
+                tap_code(KC_KP_8);
+                // Отпускаем Alt
+                unregister_code(KC_LALT);
+                return false;
+
+            // Макрос для символа "\" (Alt + 92)
+            case QK_MACRO_1:
+                tap_code(KC_NUM_LOCK);
+                register_code(KC_LALT);
+                tap_code(KC_KP_9);
+                tap_code(KC_KP_2);
+                unregister_code(KC_LALT);
+                return false;
+
+            // Макрос для символа "|" (Alt + 124)
+            case QK_MACRO_2:
+                tap_code(KC_NUM_LOCK);
+                register_code(KC_LALT);
+                tap_code(KC_KP_1);
+                tap_code(KC_KP_2);
+                tap_code(KC_KP_4);
+                unregister_code(KC_LALT);
+                return false;
+
+            // Макрос для символа ";" (Alt + 59)
+            case QK_MACRO_3:
+                tap_code(KC_NUM_LOCK);
+                register_code(KC_LALT);
+                tap_code(KC_KP_5);
+                tap_code(KC_KP_9);
+                unregister_code(KC_LALT);
+                return false;
+
+            // Макрос для символа "," (Alt + 44)
+            case QK_MACRO_4:
+                tap_code(KC_NUM_LOCK);
+                register_code(KC_LALT);
+                tap_code(KC_KP_4);
+                tap_code(KC_KP_4);
+                unregister_code(KC_LALT);
+                return false;
+        }
+    }
+    return true;
+};
+
+// В вашей раскладке (LAYOUT) вы назначаете эти макросы на нужные клавиши:
+// QK_MACRO_0, QK_MACRO_1, QK_MACRO_2, QK_MACRO_3, QK_MACRO_4
+// В VIA они появятся как "Macro 0...4" во вкладке Macros.
 // Automatically enable sniping-mode on the pointer layer.
 #define CHARYBDIS_AUTO_SNIPING_ON_LAYER LAYER_POINTER
 
