@@ -41,7 +41,8 @@ enum combo_events {
     UPRIGHT_ALT_LEFT,
     PGUPEND_ALT_UP,
     MCOMMA_LANG,
-    CLOSE
+    CLOSE_1,
+    CLOSE_2
 };
 
 // Последовательности клавиш
@@ -56,6 +57,8 @@ const uint16_t PROGMEM upright_combo[] = {KC_UP, KC_RIGHT, COMBO_END};
 const uint16_t PROGMEM pgupend_combo[] = {KC_PGUP, KC_END, COMBO_END};
 const uint16_t PROGMEM mcomma_combo[] = {KC_M, KC_COMM, COMBO_END};
 const uint16_t PROGMEM zx_combo[] = {KC_X, LT(4,KC_Z), COMBO_END};
+const uint16_t PROGMEM dot_splash_combo[] = {KC_DOT, LT(4,KC_/), COMBO_END};
+
 
 
 // Маппинг комбо
@@ -70,7 +73,8 @@ combo_t key_combos[] = {
     [UPRIGHT_ALT_LEFT] = COMBO(upright_combo, LALT(KC_LEFT)),   // Up+Right = Alt+Left
     [PGUPEND_ALT_UP] = COMBO(pgupend_combo, LALT(KC_UP)),       // PgUp+End = Alt+Up
     [MCOMMA_LANG] = COMBO(mcomma_combo, LGUI(KC_SPC)),      // M + , = Win + Space (Смена языка)
-    [CLOSE] = COMBO(zx_combo, LALT(KC_F4)),      // Z + X = Alt + F4 (Закрыть)
+    [CLOSE_1] = COMBO(zx_combo, LALT(KC_F4)),      // Z + X = Alt + F4 (Закрыть)
+    [CLOSE_2] = COMBO(dot_splash_combo, LALT(KC_F4)),      // Z + X = Alt + F4 (Закрыть)
 
 };
 
